@@ -16,6 +16,12 @@ export EDITOR='code --wait'
 alias rmrf="rm -rf"
 alias dotfiles="ls -a ~"
 alias f="fzf"
+alias gp="git pull"
+alias ga="git add"
+alias gc="git commit -m "
+alias gs="git status"
+alias gd="git diff master"
+alias gmc="gitmoji --commit"
 
 alias flyink="fly -t ink"
 alias flyinf="fly -t inf"
