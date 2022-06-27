@@ -15,6 +15,7 @@ export EDITOR='code --wait'
 
 alias rmrf="rm -rf"
 alias dotfiles="ls -a ~"
+alias f="fzf"
 
 alias flyink="fly -t ink"
 alias flyinf="fly -t inf"
