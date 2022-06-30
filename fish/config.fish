@@ -11,6 +11,9 @@ export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
+set -Ux GOPATH "$HOME/workspace"
+set -Ux PATH "$PATH:$GOPATH/bin"
+
 export EDITOR='code --wait'
 
 alias rmrf="rm -rf"
@@ -18,9 +21,11 @@ alias dotfiles="ls -a ~"
 alias f="fzf"
 alias gp="git pull"
 alias ga="git add"
+alias gcm="git checkout master"
 alias gc="git commit -m "
 alias gs="git status"
-alias gd="git diff master"
+alias gd="git diff"
+alias gdm="git diff master"
 alias gmc="gitmoji --commit"
 
 alias flyink="fly -t ink"
