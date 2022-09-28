@@ -12,11 +12,12 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
 set -Ux GOPATH "$HOME/workspace"
-set -Ux PATH "$PATH:$GOPATH/bin"
+set -Ux PATH $PATH:$GOPATH/bin
 
 export EDITOR='code --wait'
 
 alias rmrf="rm -rf"
+alias srmrf="sudo rm -rf"
 alias dotfiles="ls -a ~"
 alias f="fzf"
 alias gp="git pull"
@@ -32,6 +33,7 @@ alias flyink="fly -t ink"
 alias flyinf="fly -t inf"
 
 alias k="kubectl"
+alias kx="kubectx"
 alias kxd="kubectx blue-development"
 alias kxs="kubectx blue-shared"
 alias kxp="kubectx blue-production"
