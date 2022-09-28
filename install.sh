@@ -1,7 +1,6 @@
 #!/bin/bash
 
 export GITHUB_USER=toddtee
-export BREWFILE=
 
 #Install xcode
 /usr/bin/xcode-select --install
