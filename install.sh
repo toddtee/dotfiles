@@ -1,30 +1,26 @@
 #!/bin/bash
 
 export GITHUB_USER=toddtee
-
-#Install xcode
-/usr/bin/xcode-select --install
-
-echo "After Xcode Command Line Developer Tools has installed press enter."
-read
-
-# Update MacOS
-softwareupdate -i -a
+export BREWFILE=$HOME/.local/share/chezmoi/Brewfile
 
 # Install chezmoi
 which chezmoi || sh -c "$(curl -fsLS https://chezmoi.io/get)"
 
 # Setup chezmoi
-$HOME/bin/chezmoi init $GITHUB_USER --ssh
+$HOME/bin/chezmoi init $GITHUB_USER
 
 # Install brew if not present
 which brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# Change into chezmoi directory
-chezmoi cd
-
-#Start brewing...
+# Start brewing
+echo "Updating brew"
 brew update
+echo "Upgrading brew packages"
 brew upgrade
+echo "Tapping brew"
 brew tap homebrew/bundle
-brew bundle --verbose
+echo "Installing packages from Brewfile."
+brew bundle --file $BREWFILE --verbose
+
+# Cleanup
+[ -d "$HOME/bin" ] && rm -rf $HOME/bin || echo "No cleanup required."
