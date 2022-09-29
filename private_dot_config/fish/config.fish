@@ -3,6 +3,8 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 starship init fish | source #use star-fish prompt
 kubectl completion fish | source #kubectl autocompletion
 
@@ -15,6 +17,8 @@ set -Ux GOPATH "$HOME/workspace"
 set -Ux PATH $PATH:$GOPATH/bin
 
 export EDITOR='code --wait'
+
+alias cz="chezmoi"
 
 alias rmrf="rm -rf"
 alias srmrf="sudo rm -rf"
