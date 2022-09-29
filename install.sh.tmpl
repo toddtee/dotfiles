@@ -24,3 +24,9 @@ brew bundle --file $BREWFILE --verbose
 
 # Cleanup
 [ -d "$HOME/bin" ] && rm -rf $HOME/bin || echo "No cleanup required."
+
+# Apple Silicon Stuff
+{{ if eq .chezmoi.arch "arm64" }}
+# do stuff
+{{ end }}
+
