@@ -1,0 +1,15 @@
+[kubernetes]
+symbol="☸️"
+style = "dimmed blue bold"
+format = '[$symbol  $context(\($namespace\))]($style) in '
+disabled = false
+[kubernetes.context_aliases]
+"blue-development" = "dev"
+"blue-production" = "prod"
+"blue-shared" = "shared"
+"dev-01a" = "nxgp"
+".*/openshift-cluster/.*" = "openshift"
+"gke_.*_(?P<var_cluster>[\\w-]+)" = "gke-$var_cluster"
+[kubernetes.user_aliases]
+"dev.local.cluster.k8s" = "dev"
+
