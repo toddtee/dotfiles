@@ -18,6 +18,8 @@ set -Ux PATH $PATH:$GOPATH/bin
 
 export EDITOR='code --wait'
 
+set -x AWS_PROFILE ffxblue
+
 alias cz="chezmoi"
 
 alias rmrf="rm -rf"
