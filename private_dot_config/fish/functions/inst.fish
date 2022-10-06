@@ -123,4 +123,5 @@ The `deploy.yaml` that is added declares the environment information which is pa
     #Git Add and Commit
     git add $CI_DIR $HELMFILE_DIR $HELM_CONFIG_DIR
     git commit -m $GIT_SUBJECT -m $GIT_MESSAGE
+    git push --set-upstream "origin" $BRANCHNAME
 end
