@@ -6,6 +6,7 @@ end
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 starship init fish | source #use star-fish prompt
+fish_vi_key_bindings #Vim key bindings in shell
 kubectl completion fish | source #kubectl autocompletion
 
 #required for yubikey ssh
